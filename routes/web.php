@@ -1,0 +1,20 @@
+<?php
+
+use App\Http\Controllers\DictController;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+
+Route::get('/', [DictController::class, 'index'])->name('list');
+Route::get('create', [DictController::class, 'create'])->name('create');
+Route::post('create', [DictController::class, 'store'])->name('store');
+Route::get('random', [DictController::class, 'random'])->name('random');
