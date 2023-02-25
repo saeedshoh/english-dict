@@ -16,7 +16,7 @@
         const message = new SpeechSynthesisUtterance();
         message.text = text
         message.lang = "en-US";
-        message.rate = 0.75;
+        message.rate = 0.5;
 
         window.speechSynthesis.speak(message);
 
