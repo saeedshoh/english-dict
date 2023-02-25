@@ -32,4 +32,10 @@ class DictController extends Controller
     {
         return view('random')->with(['dict' => Dict::all()->random()]);
     }
+
+    public function destroy(Dict $dict)
+    {
+        $dict->delete();
+        return back();
+    }
 }
