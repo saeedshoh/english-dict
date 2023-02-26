@@ -24,6 +24,12 @@
             </svg>
         </li>
         <li><a class="text-sm {{ request()->routeIs('random') ? 'text-blue-600 font-bold' : 'text-gray-400' }} hover:text-gray-500 " href="{{ route('random') }}">Случайное слово</a></li>
+        <li class="text-gray-300">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+            </svg>
+        </li>
+        <li><a class="text-sm {{ request()->routeIs('latest') ? 'text-blue-600 font-bold' : 'text-gray-400' }} hover:text-gray-500 " href="{{ route('latest') }}">Показать по одному</a></li>
     </ul>
     <a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold  rounded-xl transition duration-200" href="#">Sign In</a>
     <a class="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200" href="#">Sign up</a>
@@ -52,6 +58,11 @@
                 <li class="mb-1">
                     <a class="block {{ request()->routeIs('random') ? 'text-blue-600 font-bold' : 'text-gray-400' }} p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="{{ route('random') }}">Случайное
                         слово</a>
+                </li>
+
+                <li class="mb-1">
+                    <a class="block {{ request()->routeIs('latest') ? 'text-blue-600 font-bold' : 'text-gray-400' }} p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="{{ route('latest') }}">Показать по
+                        одному</a>
                 </li>
             </ul>
         </div>

@@ -19,3 +19,4 @@ Route::get('create', [DictController::class, 'create'])->name('create');
 Route::post('create', [DictController::class, 'store'])->name('store');
 Route::delete('destroy/{dict}', [DictController::class, 'destroy'])->name('destroy');
 Route::get('random', [DictController::class, 'random'])->name('random');
+Route::get('latest', [DictController::class, 'latest'])->name('latest');

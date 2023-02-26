@@ -33,6 +33,11 @@ class DictController extends Controller
         return view('random')->with(['dict' => Dict::all()->random()]);
     }
 
+    public function latest()
+    {
+        return view('latest')->with(['dicts' => Dict::latest()->simplePaginate(1)]);
+    }
+
     public function destroy(Dict $dict)
     {
         $dict->delete();

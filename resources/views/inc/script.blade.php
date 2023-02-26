@@ -20,6 +20,5 @@
 
         window.speechSynthesis.speak(message);
 
-
     }
 </script>
