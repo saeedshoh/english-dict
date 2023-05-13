@@ -43,4 +43,22 @@ class DictController extends Controller
         $dict->delete();
         return back();
     }
+
+    public function toggle(Dict $dict)
+    {
+        $dict->is_favorite ? $dict->update(['is_favorite' => false])
+            : $dict->update(['is_favorite' => true]);
+
+        return response()->json(["message" => "success"]);
+    }
+
+    public function favorite()
+    {
+        return view('nolearn')->with(['dicts' => Dict::whereIsFavorite(true)->latest()->simplePaginate(1)]);
+    }
+
+    public function favorites()
+    {
+        return view('nolearnlist')->with(['dicts' => Dict::whereIsFavorite(true)->latest()->paginate(100)]);
+    }
 }
