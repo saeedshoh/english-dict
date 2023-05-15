@@ -10,12 +10,12 @@
             </svg>
         </button>
     </div>
-    <ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
-        <li><a class="text-sm {{ request()->routeIs('list') ? 'text-blue-600 font-bold' : 'text-gray-400' }} hover:text-gray-500" href="/">Словари</a></li>
+    <ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-[90%] lg:space-x-6">
+        <li><a class="text-sm {{ request()->routeIs('list') ? 'text-blue-600 font-bold' : 'text-gray-400' }} hover:text-gray-500" href="/">Словари - {{ $rows->total_rows }}</a></li>
         <x-separate />
         <li><a class="text-sm {{ request()->routeIs('random') ? 'text-blue-600 font-bold' : 'text-gray-400' }} hover:text-gray-500 " href="{{ route('random') }}">Случайное слово</a></li>
         <x-separate />
-        <li><a class="text-sm {{ request()->routeIs('dicts.new') ? 'text-blue-600 font-bold' : 'text-gray-400' }} hover:text-gray-500" href="{{ route('dicts.new') }}">Неизученные</a></li>
+        <li><a class="text-sm {{ request()->routeIs('dicts.new') ? 'text-blue-600 font-bold' : 'text-gray-400' }} hover:text-gray-500" href="{{ route('dicts.new') }}">Неизученные - {{ $rows->favorite_rows }}</a></li>
         <x-separate />
         <li><a class="text-sm {{ request()->routeIs('favorite.show') ? 'text-blue-600 font-bold' : 'text-gray-400' }} hover:text-gray-500 " href="{{ route('favorite.show') }}">Случайное неизученное слово</a></li>
         <x-separate />
@@ -23,8 +23,6 @@
         <x-separate />
         <li><a class="text-sm {{ request()->routeIs('create') ? 'text-blue-600 font-bold' : 'text-gray-400' }}" href="{{ route('create') }}">Добавить</a></li>
     </ul>
-    <a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold  rounded-xl transition duration-200" href="#">Sign In</a>
-    <a class="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200" href="#">Sign up</a>
 </nav>
 <div class="navbar-menu relative z-50 hidden">
     <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
