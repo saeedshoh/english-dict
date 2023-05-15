@@ -40,10 +40,23 @@
         <div>
             <ul>
                 <li class="mb-1">
-                    <a class="block {{ request()->routeIs('list') ? 'text-blue-600 font-bold' : 'text-gray-400' }} p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="{{ route('list') }}">Списка</a>
+                    <a class="block {{ request()->routeIs('list') ? 'text-blue-600 font-bold' : 'text-gray-400' }} p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="{{ route('list') }}">Списка -
+                        {{ $rows->total_rows }}</a>
+                </li>
+
+
+                <li class="mb-1">
+                    <a class="block {{ request()->routeIs('dicts.new') ? 'text-blue-600 font-bold' : 'text-gray-400' }} p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                        href="{{ route('dicts.new') }}">Неизученные - {{ $rows->favorite_rows }}</a>
                 </li>
                 <li class="mb-1">
-                    <a class="block p-4 {{ request()->routeIs('list') ? 'text-blue-600 font-bold' : 'text-gray-400' }} text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="{{ route('create') }}">Добавить</a>
+                    <a class="block {{ request()->routeIs('favorite.show') ? 'text-blue-600 font-bold' : 'text-gray-400' }} p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                        href="{{ route('favorite.show') }}">Случайное неизученное слово</a>
+                </li>
+
+
+                <li class="mb-1">
+                    <a class="block p-4 {{ request()->routeIs('create') ? 'text-blue-600 font-bold' : 'text-gray-400' }} text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="{{ route('create') }}">Добавить</a>
                 </li>
                 <li class="mb-1">
                     <a class="block {{ request()->routeIs('random') ? 'text-blue-600 font-bold' : 'text-gray-400' }} p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="{{ route('random') }}">Случайное
